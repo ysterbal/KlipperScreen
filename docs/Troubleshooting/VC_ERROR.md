@@ -37,3 +37,26 @@ Restart KlipperScreen:
 sudo service KlipperScreen restart
 ```
 
+
+If it's still failing try the following:
+
+Ensure legacy X11 config file support is installed (Raspbian):
+```sh
+dpkg --get-selections | grep xserver-xorg-legacy
+```
+Should return the below if installed else nothing
+```
+> xserver-xorg-legacy                             install
+```
+
+Install using:
+```sh
+sudo apt install xserver-xorg-legacy
+```
+
+Restart KlipperScreen:
+```sh
+sudo service KlipperScreen restart
+```
+
+
